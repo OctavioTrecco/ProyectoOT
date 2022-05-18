@@ -1,0 +1,39 @@
+.rrss {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+
+$rrss: (
+  whatsapp: #1c912f,
+  facebook: #555fee,
+  instagram:#ee5316 ,
+  lado: right,
+);
+
+@each $name, $color in $rrss {
+  .#{$name} {
+    background-color: $color;
+    text-decoration: none;
+    margin: 0 5px 10px;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    float: map-get($rrss,lado) ;
+    justify-content: center;
+    font-size: 20px;
+    border-radius: $borderRadius; // 20px
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+      border-radius: $borderRadius - 10px;
+      color: rgb(188, 199, 207);
+    }
+  }
+}
+
+.textofinal{
+  font-size: 20px;
+}
